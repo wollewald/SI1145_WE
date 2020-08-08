@@ -1,0 +1,82 @@
+#######################################
+# Syntax Coloring Map For SI1145_WE
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+SI1145_WE	KEYWORD1
+
+# ENUM TYPES
+SI1145MeasureMode	KEYWORD1
+SI1145MeasureType	KEYWORD1
+SI1145IntType	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+resetSI1145	KEYWORD2
+setI2CAddress	KEYWORD2
+enableMeasurements	KEYWORD2
+startSingleMeasurement	KEYWORD2
+enableInterrupt	KEYWORD2
+disableAllInterrupts	KEYWORD2
+setMeasurementRate	KEYWORD2
+setLEDCurrent	KEYWORD2
+selectPsDiode	KEYWORD2
+selectIrDiode	KEYWORD2
+enableHighResolutionPs	KEYWORD2
+disableHighResolutionPs	KEYWORD2
+enableHighResolutionVis	KEYWORD2
+disableHighResolutionVis	KEYWORD2
+enableHighResolutionIr	KEYWORD2
+disableHighResolutionIr	KEYWORD2
+setPsAdcGain	KEYWORD2
+enableHighSignalPsRange	KEYWORD2
+disableHighSignalPsRange	KEYWORD2
+setAlsVisAdcGain	KEYWORD2
+enableHighSignalVisRange	KEYWORD2
+disableHighSignalVisRange	KEYWORD2
+setAlsIrAdcGain	KEYWORD2
+enableHighSignalIrRange	KEYWORD2
+disableHighSignalIrRange	KEYWORD2
+getAlsVisData	KEYWORD2
+getAlsIrData	KEYWORD2
+getPsData	KEYWORD2
+getUvIndex	KEYWORD2
+getFailureMode	KEYWORD2
+clearFailure	KEYWORD2
+clearAllInterrupts	KEYWORD2
+clearAlsInterrupt	KEYWORD2
+clearPsInterrupt	KEYWORD2
+clearCmdInterrupt	KEYWORD2
+getInterruptStatus	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+SI1145_RESP_NO_ERROR	LITERAL1
+SI1145_RESP_INVALID_SETTING	LITERAL1
+SI1145_RESP_PS1_ADC_OVERFLOW	LITERAL1
+SI1145_RESP_ALS_VIS_ADC_OVERFLOW	LITERAL1
+SI1145_RESP_ALS_IR_ADC_OVERFLOW	LITERAL1
+SI1145_RESP_AUX_ADC_OVERFLOW	LITERAL1
+SMALL_DIODE	LITERAL1
+LARGE_DIODE	LITERAL1
+
+# ENUM VALUES
+FORCE	LITERAL1
+PAUSE	LITERAL1
+AUTO	LITERAL1
+PS_TYPE	LITERAL1
+ALS_TYPE	LITERAL1
+PSALS_TYPE	LITERAL1
+ALSUV_TYPE	LITERAL1
+PSALSUV_TYPE	LITERAL1
+ALS_INT	LITERAL1
+PS_INT	LITERAL1
+PSALS_INT	LITERAL1
+CMD_INT	LITERAL1
