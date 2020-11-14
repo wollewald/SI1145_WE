@@ -9,4 +9,4 @@ https://wolles-elektronikkiste.de/si1145-als-ir-uv-und-ps-sensor?lang=en
 I tried to capture all relevant features of the SI1145. If you miss something or
 if you find a bug, please shout out! If you have questions, please ask.
 
-If you like this please give it a star. 
+If you like this library please give it a star. 
