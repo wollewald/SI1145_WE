@@ -4,7 +4,7 @@
 * This sketch shows how to do PS, ALS, VIS an UV measurements in continuous mode.
 *  
 * Further information can be found on:
-* https://wolles-elektronikkiste.de/si1145
+* https://wolles-elektronikkiste.de/si1145-als-ir-uv-und-ps-sensor?lang=en
 * 
 ***************************************************************************/
 
