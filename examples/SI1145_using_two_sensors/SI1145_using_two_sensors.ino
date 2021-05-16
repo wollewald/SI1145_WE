@@ -14,6 +14,8 @@ const int sensor2EnablePin = 10;
 
 SI1145_WE sensor1 = SI1145_WE();
 SI1145_WE sensor2 = SI1145_WE();
+// You can also pass a Wire object like wire2:
+// SI1145_WE sensor1 = SI1145_WE(&wire2);
 
 void setup() {
   pinMode(sensor2EnablePin, OUTPUT);
