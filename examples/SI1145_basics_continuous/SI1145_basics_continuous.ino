@@ -44,7 +44,8 @@ void loop() {
   byte failureCode = 0;
   unsigned int amb_als = 0;
   unsigned int amb_ir = 0;
-  unsigned int proximity = 0;
+  /* uncomment if you want to perform PS measurements */
+  //unsigned int proximity = 0;
   float uv = 0.0;
   
   amb_als = mySI1145.getAlsVisData();
