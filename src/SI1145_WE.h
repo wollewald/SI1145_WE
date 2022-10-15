@@ -119,9 +119,7 @@ typedef enum SI1145IntType{
 class SI1145_WE
 {
 public: 
-    SI1145_WE();
-    SI1145_WE(TwoWire *w);
-  
+    SI1145_WE(TwoWire *w = &Wire);  
     void init();
     void resetSI1145();
     void setI2CAddress(int);

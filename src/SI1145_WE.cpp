@@ -15,11 +15,6 @@
 
 #include "SI1145_WE.h"
 
-SI1145_WE::SI1145_WE(){
-    _wire = &Wire;
-    i2cAddress = 0x60;   
-}
-
 SI1145_WE::SI1145_WE(TwoWire *w){
     _wire = w;
     i2cAddress = 0x60; 
