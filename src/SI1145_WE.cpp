@@ -15,11 +15,6 @@
 
 #include "SI1145_WE.h"
 
-SI1145_WE::SI1145_WE(TwoWire *w){
-    _wire = w;
-    i2cAddress = 0x60; 
-}
-
 void SI1145_WE::init(){ 
     /* sets default parameters */
         
@@ -72,8 +67,8 @@ void SI1145_WE::resetSI1145(){
     delay(10);
 }
 
-void SI1145_WE::setI2CAddress(int addr){
-    setParameter(SI1145_PARA_I2C_ADDR, (uint8_t)addr); delay(10);
+void SI1145_WE::setI2CAddress(uint8_t addr){
+    setParameter(SI1145_PARA_I2C_ADDR, addr); delay(10);
     setRegister(SI1145_REG_COMMAND, SI1145_BUSADDR); delay(10);
     i2cAddress = addr;
 }
@@ -133,11 +128,11 @@ void SI1145_WE::setLEDCurrent(uint8_t curr){
     setRegister(SI1145_REG_PSLED21, curr);
 }
 
-void SI1145_WE::selectPsDiode(uint8_t diode){
+void SI1145_WE::selectPsDiode(si1145_diode diode){
     setParameter(SI1145_PARA_PS1_ADCMUX, diode);
 }
 
-void SI1145_WE::selectIrDiode(uint8_t diode){
+void SI1145_WE::selectIrDiode(si1145_diode diode){
     setParameter(SI1145_PARA_ALS_IR_ADCMUX, diode);
 }
 
@@ -289,7 +284,7 @@ uint8_t SI1145_WE::getRegister(uint8_t registerAddr)
     _wire->beginTransmission(i2cAddress); 
     _wire->write(registerAddr); 
     _wire->endTransmission(false); 
-    _wire->requestFrom(i2cAddress , 1);
+    _wire->requestFrom(i2cAddress , static_cast<uint8_t>(1));
     data = _wire->read(); 
 
     return data;
@@ -305,7 +300,7 @@ uint16_t SI1145_WE::getRegister16bit(uint8_t registerAddr)
     _wire->write(registerAddr); 
     _wire->endTransmission(false); 
 
-    _wire->requestFrom(i2cAddress, 2);
+    _wire->requestFrom(i2cAddress, static_cast<uint8_t>(2));
     data_low = _wire->read(); 
     data_high = _wire->read(); 
     data = (data_high << 8)|data_low;
@@ -325,8 +320,7 @@ void SI1145_WE::setRegister16bit(uint8_t registerAddr, uint16_t data)
 {
     _wire->beginTransmission(i2cAddress); 
     _wire->write(registerAddr); 
-    uint8_t temp;
-    temp = data & 0xff;
+    uint8_t temp = data & 0xff;
     _wire->write(temp); 
     temp = (data >> 8) & 0xff;
     _wire->write(temp); 
