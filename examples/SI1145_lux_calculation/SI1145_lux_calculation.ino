@@ -17,8 +17,8 @@
 const int interruptPin = 2;
 
 SI1145_WE mySI1145 = SI1145_WE();
-// You can also pass a Wire object like wire2:
-// SI1145_WE mySI1145 = SI1145_WE(&wire2);
+// You can also pass a Wire object:
+// SI1145_WE mySI1145 = SI1145_WE(&Wire);
 
 void setup() {
   Serial.begin(9600);
